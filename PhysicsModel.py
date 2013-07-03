@@ -199,4 +199,3 @@ if 0:
     plot(test.v_history[1:test.counter])
     print test.x_history[test.counter-1]
 
-# <codecell>
