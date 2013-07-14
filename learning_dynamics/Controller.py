@@ -1,8 +1,8 @@
-
-import numpy as np
-from PhysicsModel import PhysicsModel
-import matplotlib as mpl
 import itertools
+import numpy as np
+import matplotlib as mpl
+from PhysicsModel import PhysicsModel
+
 mpl.rcParams['image.interpolation'] = 'none'
 
 
@@ -11,6 +11,7 @@ class Controller():
         decides what to do next based on info available.'''
     def __init__(self):
         self.actions = np.array([-5, -2.5, 0, 2.5, 5])
+        self.actions = np.array([-5, -.1, 0, .1, 5])
         #self.actions = np.array([-5,0,5])
         #self.actions = np.linspace(-1,1,10)        
         
@@ -34,7 +35,7 @@ class Controller():
         for action in xrange(len(self.actions)):
             test = PhysicsModel(self.state,self.dt)
             test.step(self.actions[action])   
-            #print test.state
+            #print omnicient.state
             x_hypothetical_states[action,:] = test.state
         #print x_hypothetical_states
         #NOTE: DON'T REALLY UNDERSTAND THE RESULTS, BUT THE SIMULATOR SEEMS TO WORK SO JUST GO WITH IT...FOR NOW

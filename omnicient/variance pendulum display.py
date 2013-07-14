@@ -1,12 +1,14 @@
+import itertools
 
 import numpy as np
 import matplotlib as mpl
 import numpy.random as random
-import itertools
-mpl.rcParams['image.interpolation'] = 'none'
+
+from PhysicsModel import PhysicsModel
 
 from Controller import Controller
-from PhysicsModel import PhysicsModel
+
+mpl.rcParams['image.interpolation'] = 'none'
 
 
 #function to get 
@@ -41,7 +43,6 @@ def get_bin_bounds(data,num_bins):
 
 
 ## EMPOWERMENT CALCULATOR
-import multiprocessing
 
 ##TIME STEP SIZE AND NOISE ARE IMPORTANT
 results = []
